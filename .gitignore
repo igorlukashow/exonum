@@ -1,0 +1,8 @@
+/target/
+*.iml
+*.iws
+*.ipr
+/build/
+/.idea/
+*.ini
+*.log
