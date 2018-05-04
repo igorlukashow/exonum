@@ -19,4 +19,8 @@ public class SessionInfo {
     public String getEmail_addr() {
         return email_addr;
     }
+
+    public void setSid_token(String sid_token) {
+        this.sid_token = sid_token;
+    }
 }

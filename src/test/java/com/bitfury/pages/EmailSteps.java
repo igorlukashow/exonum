@@ -51,6 +51,7 @@ public class EmailSteps {
         params.put("seq", seq);
 
         JsonNode responseJson = sendGetRequest(GUEIRRILLAMAIL_URL, "get_email_list", params);
+        sessionInfo.setSid_token(getText(responseJson, "sid_token"));
         return getEmailList(responseJson);
     }
 
@@ -155,6 +156,7 @@ public class EmailSteps {
         params.put("seq", seq);
 
         JsonNode responseJson = sendGetRequest(GUEIRRILLAMAIL_URL, "check_email", params);
+        sessionInfo.setSid_token(getText(responseJson, "sid_token"));
         return getEmailList(responseJson);
     }
 
@@ -164,6 +166,7 @@ public class EmailSteps {
         params.put("email_id", email.getMail_id());
 
         JsonNode responseJson = sendGetRequest(GUEIRRILLAMAIL_URL, "fetch_email", params);
+        sessionInfo.setSid_token(getText(responseJson, "sid_token"));
         email.setMail_body(getText(responseJson, "mail_body"));
         return email;
     }
